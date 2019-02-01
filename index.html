@@ -19,10 +19,10 @@
 
 	<div class = "row">
 		<div class = "col-lg-12">
-			<div id = "line"><center>
-				<button type = "button" id = "addNewIssueBtn" onclick = "displayIssue()">Add New Issue</button>
-				<button type = "button" id = "projectOverviewBtn" onclick = "projectOverview()">Project Overview</button></center>
-			</div>
+			<div id = "line"></div>
+			<center>
+			<button type = "button" id = "addNewIssueBtn" onclick = "displayIssue()">Add New Issue</button>
+			<button type = "button" id = "projectOverviewBtn" onclick = "projectOverview()">Project Overview</button></center>
 		</div>
 	</div>
 	
@@ -32,7 +32,7 @@
         		<div class="block">
 					<div>
 						<label for = "userSelect">Logged in as: </label>		
-						<select id = "userSelect">
+						<select id = "userSelect" class = "selectStyle">
 						</select><br>
 										
 						<div>
@@ -53,9 +53,9 @@
 		
 			<div class="col-md-6">
 	        	<div class="block">
-					<div>
-						<label for = "selectSprint">Working on Sprint: </label>		
-							<select id = "selectSprint">
+	        		<div>
+						<label for = "selectSprint">Selected Sprint: </label>		
+							<select id = "selectSprint" class = "selectStyle">
 							</select><br>
 
 						<label for = "sprintIdInput">Sprint ID </label>
@@ -75,18 +75,18 @@
 					</div>
 				</div>			
 			</div>
-		</div><br>
+	</div><br>
 
 		<div class = "row" id = "issueBox">
-			<div class = "col-md-6 offset-md-3 block">
+			<div class = "col-md-12 block">
 				<div>
 					<label for = "issueIdInput">Issue ID</label><br>
-					<input type = "text" id = "issueIdInput" placeholder = "ID generates automatically" disabled>
+					<input type = "text" id = "issueIdInput" placeholder = "ID generates automatically" class = "issueInputStyle" disabled>
 				</div>
 
 				<div>
 					<label for = "issueTypeSelect">Issue Type</label><br>
-					<select id = "issueTypeSelect">
+					<select id = "issueTypeSelect" class = "selectStyle">
 						<option name = "bug">Bug</option>
 						<option name = "feature">Feature</option>
 						<option name = "task">Task</option>
@@ -95,24 +95,24 @@
 
 				<div>
 					<label for = "issueNameInput">Issue Name</label><br>
-					<input type = "text" id = "issueNameInput">
+					<input type = "text" id = "issueNameInput" class = "issueInputStyle">
 				</div>
 
 				<div>
 					<label for = "issueSprintIdSelect">Sprint</label><br>
-					<select id = "issueSprintIdSelect">
+					<select id = "issueSprintIdSelect" class = "selectStyle">
 					</select>
 				</div>
 
 				<div>
 					<label for = "assignedToSelect">Assignee</label><br>
-					<select id = "assignedToSelect">
+					<select id = "assignedToSelect" class = "selectStyle">
 					</select>
 				</div>
 
 				<div>
 					<label for = "statusSelect">Status</label><br>
-					<select id = "statusSelect" selected = "New" disabled>
+					<select id = "statusSelect" selected = "New" disabled class = "selectStyle">
 						<option name = "new">New</option>
 						<option name = "inProgress">In Progress</option>
 						<option name = "feedback">Feedback</option>

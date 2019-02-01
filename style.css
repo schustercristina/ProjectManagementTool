@@ -1,8 +1,18 @@
-.disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+body{
+	font-family: Quicksand;
+	background-color: #232323;
+	color: white;
 }
 
+#header{
+	height: 100px;
+	background-color: #72536a;
+}
+
+#line{
+	background-color: white;
+	height: 15px;
+}
 
 .block {
 	text-align: center;
@@ -12,18 +22,34 @@
 
 }
 
-
-
-body{
-	font-family: Quicksand;
-	background-color: #232323;
-	color: white;
+.selectStyle{
+	width: 20%;
 }
 
-.col-md-4{
-	outline: 1px solid white;
-	
 
+.issueInputStyle{
+	width: 15%;
+}
+
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+tr{
+	transition: all .25s ease-in-out;
+}
+
+tr:hover{
+	background-color: rgba(114,	83,	106, .6);
+	cursor: pointer;
+
+}
+
+
+.col-md-4{
+	outline: 1px solid white;	
 	margin-right: 2px;
 
 }
@@ -37,13 +63,6 @@ body{
 	padding: 15px;
 	text-transform: uppercase;
 
-}
-#header{
-	height: 100px;
-	background-color: #72536a;
-}
-
-#line{
 }
 
 
@@ -59,13 +78,6 @@ select {
 	border-radius: 25px;
 }
 
-fieldset{
-	width: 30%;
-	margin-bottom: 50px;
-	text-align: center;
-
-}
-
 button {
 	font-family: Quicksand;
 	color: white;
@@ -74,8 +86,7 @@ button {
 	font-size: 16px;
 	margin: 10px;
 	cursor: pointer;
-		border-radius: 10px;
-
+	border-radius: 10px;
 }
 
 
@@ -96,7 +107,6 @@ button {
  	color: black; 
  	border: 2px solid #50B715;
 }
-
 
 
 #newSprintBtn{
