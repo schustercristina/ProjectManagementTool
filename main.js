@@ -167,8 +167,8 @@ function createIssue() {
 	var currentStatus = statusSelect.options[statusSelect.selectedIndex].value;
 	var statusId = statuses.indexOf(currentStatus);
 	var comments = [];
-	var createdAt = new Date();
-	var updatedAt = new Date();
+	var createdAt = new Date().toLocaleString();
+	var updatedAt = new Date().toLocaleString();
 	var assignee;
 	var selectedAssignee = assignedTo.options[assignedTo.selectedIndex].value;
 	for(var i = 0; i< allUsers.length; i++) {
@@ -226,8 +226,8 @@ function projectOverviewStructure() {
 	cell2.innerHTML = "Issue Type";
 	cell3.innerHTML = "Issue Name";
 	cell4.innerHTML = "Sprint ID";
-	cell5.innerHTML = "Created By";
-	cell6.innerHTML = "Assignee";
+	cell5.innerHTML = "Created By (ID)";
+	cell6.innerHTML = "Assignee ID";
 	cell7.innerHTML = "Description";
 	cell8.innerHTML = "Status ID";
 	cell9.innerHTML = "Comments";
@@ -361,7 +361,7 @@ function updateIssueFields() {
 	issue.asignee = assignee;
 	issue.issueDescription = issueDescription;
 	issue.issueStatus = statusId;
-	issue.updatedAt = new Date();
+	issue.updatedAt = new Date().toLocaleString();
 
 	clearTable();
 	projectOverviewStructure();
