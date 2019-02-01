@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel = "stylesheet" href = "style.css">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand|Poiret+One" rel="stylesheet">
+	
+	<title>project Management Tool</title>
+</head>
+
+<body>
+	<div class = "row">
+		<div class = "col-lg-12">
+			<div id = "header"><p id = "title">project management tool</p>
+			</div>
+		</div>
+	</div>
+
+	<div class = "row">
+		<div class = "col-lg-12">
+			<div id = "line"><center>
+				<button type = "button" id = "addNewIssueBtn" onclick = "displayIssue()">Add New Issue</button>
+				<button type = "button" id = "projectOverviewBtn" onclick = "projectOverview()">Project Overview</button></center>
+			</div>
+		</div>
+	</div>
+	
+	<div class= "container">
+		<div class = "row">
+			<div class="col-md-6">
+        		<div class="block">
+					<div>
+						<label for = "userSelect">Logged in as: </label>		
+						<select id = "userSelect">
+						</select><br>
+										
+						<div>
+							<label for = "userId">User ID </label><br>
+							<input type = "text" id = "userId" placeholder = "ID generates automatically" disabled>
+						</div>
+						
+						<label for = "userName" id = "nameTitle">Name</label><br>				
+						<input type = "text" id = "userName">	
+					</div>
+
+					<div>
+						<button type = "button" id = "addUserBtn" onclick = "addsUser()">Add User</button>
+						<button type = "button" id = "newUserBtn">New User</button>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-md-6">
+	        	<div class="block">
+					<div>
+						<label for = "selectSprint">Working on Sprint: </label>		
+							<select id = "selectSprint">
+							</select><br>
+
+						<label for = "sprintIdInput">Sprint ID </label>
+						<br>
+						<input type = "text" id = "sprintIdInput" placeholder = "ID generates automatically" disabled>
+					</div>
+
+					<div>
+						<label for = "sprintName" id = "sprintTitle">Sprint Name </label>
+						<br>
+						<input type = "text" id = "sprintName">
+					</div>
+
+					<div>
+						<button type = "button" id = "addSprintBtn" onclick = "addsSprint()">Add Sprint</button>
+						<button type = "button" id = "newSprintBtn">New Sprint</button>
+					</div>
+				</div>			
+			</div>
+		</div><br>
+
+		<div class = "row" id = "issueBox">
+			<div class = "col-md-12 block">
+				<div>
+					<label for = "issueIdInput">Issue ID</label><br>
+					<input type = "text" id = "issueIdInput" placeholder = "ID generates automatically" disabled>
+				</div>
+
+				<div>
+					<label for = "issueTypeSelect">Issue Type</label><br>
+					<select id = "issueTypeSelect">
+						<option name = "bug">Bug</option>
+						<option name = "feature">Feature</option>
+						<option name = "task">Task</option>
+					</select>	
+				</div>
+
+				<div>
+					<label for = "issueNameInput">Issue Name</label><br>
+					<input type = "text" id = "issueNameInput">
+				</div>
+
+				<div>
+					<label for = "issueSprintIdSelect">Sprint</label><br>
+					<select id = "issueSprintIdSelect">
+					</select>
+				</div>
+
+				<div>
+					<label for = "assignedToSelect">Assignee</label><br>
+					<select id = "assignedToSelect">
+					</select>
+				</div>
+
+				<div>
+					<label for = "statusSelect">Status</label><br>
+					<select id = "statusSelect" selected = "New" disabled>
+						<option name = "new">New</option>
+						<option name = "inProgress">In Progress</option>
+						<option name = "feedback">Feedback</option>
+						<option name = "rework">Rework</option>
+						<option name = "resolved">Resoveld</option>
+						<option name = "readyForTesting">Ready for Testing</option>
+					</select>
+				</div>
+
+				<div>
+					<label for = "descriptionInput">Description</label><br>
+					<textarea id = "descriptionInput" rows = "4" cols = "40" placeholder = "Enter a brief description.."></textarea>
+				</div>
+
+				<div>
+					<button type = "button" id = "createIssueBtn" onclick = "createIssue()">Create Issue</button>
+					<button type = "button" id = "updateIssueBtn" onclick = "updateIssueFields()">Update Issue</button>
+				</div>
+			</div>
+		</div>
+
+		<div id = "projectOverviewDisplay">
+			<div class = "container">
+				<div class = "tab tab-1">
+					<table id = "table" border = "1">
+						<tr>
+							<th> </th>
+							<th> </th>
+							<th> </th>
+							<th> </th>
+							<th> </th>
+							<th> </th>
+							<th> </th>
+							<th> </th>
+							<th> </th>
+							<th> </th>
+							<th> </th>					
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src = "main.js"></script>
+
+<script type="text/javascript" src = "models.js"></script>
+
+</body>
+
+</html>
