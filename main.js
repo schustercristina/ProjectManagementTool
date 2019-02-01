@@ -32,7 +32,6 @@ var issueBox = document.querySelector("#issueBox");
 
 hideBlocks();
 projectOverviewStructure();
-//hides the issue Block
 
 function hideBlocks() {
 	issuesDisplay.style.display = "none";
@@ -42,9 +41,12 @@ function hideBlocks() {
 }
 
 function displayIssue(){
-	if(allUsers.length > 0 && sprints.length){	
-		updateIssueBtn.style.display = "none";
+	if(allUsers.length > 0 && sprints.length){
 		issueBox.style.display = "initial";
+		updateIssueBtn.disabled = true;
+		updateIssueBtn.classList.add("disabled");
+		createIssueBtn.classList.remove("disabled");
+		createIssueBtn.disabled = false;
 	}else {
 		alert("You have to Log in first and create a Sprint in order to add an issue!")
 	}
@@ -153,7 +155,8 @@ selectSprint.addEventListener("change", function() {
 	}
 });
 
-function createIssue() {	
+function createIssue() {
+	issueBox.style.display = "none";
 	var issueId = issues.length + 1;
 	issueIdInput.value = issueId;
 	var issueType = typeSelect.options[typeSelect.selectedIndex].value;
@@ -234,7 +237,9 @@ function projectOverviewStructure() {
 
 function projectOverview() {
 	if(issues.length > 0) {	
-		issuesDisplay.style.display = "initial";	
+		issueBox.style.display = "none";
+		issuesDisplay.style.display = "initial";
+			
 		for(var i = tempIssueNr; i < issues.length; i ++) {
 
 			var newRow = table.insertRow(table.length);
@@ -275,9 +280,12 @@ function projectOverview() {
 function selectIssue() {
 	for(var i = 0; i < table.rows.length; i++) {
 		table.rows[i].onclick = function(){
+			issueBox.style.display = "initial";
 			mirrorIssueFields(this.rowIndex - 1);
-			updateIssueBtn.style.display = "initial";
-			createIssueBtn.style.display = "none";
+			updateIssueBtn.disabled = false;
+			updateIssueBtn.classList.remove("disabled");
+			createIssueBtn.classList.add("disabled");
+			createIssueBtn.disabled =true;
 		}
 	}
 }
@@ -328,6 +336,7 @@ function mirrorIssueFields(issueIndex) {
 }
 
 function updateIssueFields() {
+	issueBox.style.display = "none";
 	var issueId = issueIdInput.value;
 	var issue = issues[issueId - 1];
 	var issueType = typeSelect.options[typeSelect.selectedIndex].value;
